@@ -1,3 +1,4 @@
+import os
 import cv2
 
 numbers_image=cv2.imread("Input/numbers.jpg")
@@ -13,7 +14,9 @@ count=1
 for i in range(0, 1000, 20):
     for j in range(0, 2000, 20):
         number=numbers_image[i:i+20, j:j+20]
-        cv2.imwrite(f"Output/{num}/{num}_{count}.jpg", number)
+        path=f"Output/{num}"
+        os.makedirs(path, exist_ok=True)
+        cv2.imwrite(f"{path}/{num}_{count}.jpg", number)
         count+=1
         if count>500:
             count=1
