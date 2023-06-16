@@ -23,3 +23,7 @@
 
 ![9](Output/9/9_1.jpg)
 
+# 2- Lobe using
+
+# 3- W3school matplotlib tutorial
+## The outputs are available in related .ipynb file.
