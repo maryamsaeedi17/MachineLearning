@@ -27,3 +27,6 @@
 
 # 3- W3school matplotlib tutorial
 ## The outputs are available in related .ipynb file.
+
+# 3- W3school Machine Learning tutorial
+## The outputs are available in related .ipynb file.
