@@ -8,7 +8,7 @@
 
 # 3- Balloons 🎈 and melons 🍈 problem using three features: length, width and weight.
 
-![plot](Output/\baloon-melon-war.png)
+![plot](Output/baloon-melon-war.png)
 
 # 4- California cities problem.
 
