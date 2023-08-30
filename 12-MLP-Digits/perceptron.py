@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 class Perceptron:
     def __init__(self, input_length, learning_rate, epochs):
@@ -25,8 +24,8 @@ class Perceptron:
     def predict(self, X_test):
         Y_pred = []
         for x in X_test:
-            y_pred = x @ self.weights + self.bias
-            y_pred = self.activation(y_pred, "sigmoid")
+            y_pred = x @ self.w + self.b
+            y_pred = self.activation_function(y_pred, "sigmoid")
             y_pred = np.where(y_pred > 0.5, 1, 0)
             Y_pred.append(y_pred)
         return np.array(Y_pred)
@@ -38,13 +37,16 @@ class Perceptron:
         accuracy = np.mean(Y_pred == Y_test)
         return loss, accuracy
 
-    def fit(self, X_train, Y_train, X_test, Y_test, epochs):
-        train_losses, test_losses, train_accuracies, test_accuracies = []
+    def fit(self, X_train, Y_train, X_test, Y_test):
+        train_losses= []
+        test_losses= []
+        train_accuracies= []
+        test_accuracies = []
         for epoch in range(self.epochs):
             for x, y in zip(X_train, Y_train):
                 # forwarding
                 y_pred = x @ self.w + self.b
-                y_pred = self.activation(y_pred, "sigmoid")
+                y_pred = self.activation_function(y_pred, "sigmoid")
 
                 # backpropagation
                 error = y - y_pred
